@@ -1,0 +1,102 @@
+site_name: Software Training
+site_description: Software training course
+site_author: DIPC CC Staff
+
+# Copyright
+copyright: Copyright &copy; 2023 DIPC
+
+site_url: https://dipc-cc.github.io/training-software
+
+# Navigation
+nav:
+  - Introduction:
+    - index.md
+
+# Extras
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/DIPCehu
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/donostia-international-physics-center-dipc
+
+
+# Configuration
+theme:
+  name: material
+  features:
+    - navigation.indexes
+  logo: images/dipc-logo.png
+  favicon: images/favicon.ico
+  language: en
+  font:
+    text: Roboto
+    code: Roboto Mono
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: custom-dark
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+# Extra CSS styles
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/dark-palette.css
+
+
+# Extensions
+markdown_extensions:
+  - meta
+  - attr_list
+  - footnotes
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols:
+      fractions: false
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+      - name: python
+        class: python
+        validator: !!python/name:markdown_exec.validator
+        format: !!python/name:markdown_exec.formatter
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+          
+# Plugins
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - markdown-exec
+
